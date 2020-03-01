@@ -1,0 +1,16 @@
+//.rest file - use REST-Client VSCode extension
+
+###
+//Send to docker [docker run -p 99:80 forwardedheaderswebtester]
+GET http://localhost:99/
+X-Forwarded-For: 1.1.1.1, 2.2.2.2, 3.3.3.3
+X-Forwarded-Proto: https, https, https
+X-Forwarded-Host: proxy-two.lan, proxy-one.lan, superapp.lan
+
+###
+//Send to kestrel on windows
+GET http://localhost:5000/
+X-Forwarded-For: 1.1.1.1, 2.2.2.2, 3.3.3.3
+X-Forwarded-Proto: https, https, https
+X-Forwarded-Host: proxy-two.lan, proxy-one.lan, superapp.lan
+
